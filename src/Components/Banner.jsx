@@ -8,8 +8,6 @@ function Banner() {
     getBannerImg();
   }, []);
 
-  console.log(movie);
-
   function getBannerImg() {
     axios
       .get(
@@ -24,9 +22,9 @@ function Banner() {
   return (
     <>
       <div className="h-fit w-full">
-        <div className="relative h-[550px] lg:h-[730px]">
+        <div className="h-[550px] lg:h-[730px]">
           <img
-            src={"https://image.tmdb.org/t/p/original" + movie?.backdrop_path}
+            src={import.meta.env.VITE_IMG_BASIC_URL + movie?.backdrop_path}
             alt="banner"
             className="w-full h-full object-cover"
           />
