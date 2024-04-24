@@ -1,5 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { FaCirclePlay } from "react-icons/fa6";
+import { IoIosInformationCircleOutline } from "react-icons/io";
 
 function Banner() {
   const [movie, setMovie] = useState("");
@@ -28,24 +30,25 @@ function Banner() {
             alt="banner"
             className="w-full h-full object-cover"
           />
-          <div className="absolute bottom-40 text-white  w-[30rem] ms-6">
+          <div className="absolute bottom-10 text-white  w-[30rem] ms-6">
             <h1 className="font-bold text-6xl mb-8">{movie?.title}</h1>
             <p className="font-semibold text-2xl ">
               #{Math.floor(movie.vote_average)} in Movies today
             </p>
             <p className="my-6">{movie.overview}</p>
-            <div>
+            <div className="flex">
               <button
                 type="button"
-                className="text-black bg-gray-200 hover:bg-opacity-80 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-md text-md px-5 py-2.5 me-2 mb-2 "
+                className="flex  items-center text-black bg-gray-200 hover:bg-opacity-80 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-md text-md px-5 py-2.5 me-2 mb-2 "
               >
-                Dark
+                <FaCirclePlay size={20} className="mx-1" /> Play now
               </button>
               <button
                 type="button"
-                className="text-white bg-gray-300 bg-opacity-40 hover:bg-opacity-80  border border-gray-300 focus:outline-none focus:ring-4 focus:ring-gray-100 font-medium rounded-md text-md px-5 py-2.5 me-2 mb-2 "
+                className="text-white flex items-center bg-gray-300 bg-opacity-40 hover:bg-opacity-80  border border-gray-300 focus:outline-none focus:ring-4 focus:ring-gray-100 font-medium rounded-md text-md px-5 py-2.5 me-2 mb-2 "
               >
-                Light
+                <IoIosInformationCircleOutline size={20} className="mx-1" />{" "}
+                Info
               </button>
             </div>
           </div>

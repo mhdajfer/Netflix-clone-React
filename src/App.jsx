@@ -1,15 +1,12 @@
-import Navbar from "./Components/Navbar";
-import Banner from "./Components/Banner";
-import RowComponent from "./Components/RowComponent";
+import { Routes, Route } from "react-router-dom";
+import HomePage from "./Pages/HomePage";
 
 function App() {
   return (
     <>
-      <div className="bg-gray-800 h-[2000px]">
-        <Navbar />
-        <Banner />
-        <RowComponent />
-      </div>
+      <Routes>
+        <Route path="/home" element={<HomePage />} />
+      </Routes>
     </>
   );
 }
